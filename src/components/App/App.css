@@ -1,0 +1,12 @@
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.user {
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 20px 0;
+  background-color: rgb(236, 236, 236);
+  border-radius: 30px;
+}
