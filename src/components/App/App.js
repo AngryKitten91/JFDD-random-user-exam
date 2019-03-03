@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 
+import User from 'components/User'
+
 
 const URL = 'https://randomuser.me/api/?results=10'
 
@@ -46,7 +48,7 @@ export default class App extends Component {
     if (err) {
       return (
         <div className="App" >
-          <div>
+          <div className="error">
             <p>{err.toString()}</p>
           </div>
         </div>
@@ -56,19 +58,16 @@ export default class App extends Component {
     return (
       <div className="App" >
         {loading ?
-          <div>Loading...</div>
+          <div className="loading">Loading...</div>
           :
           <div>
             {
-              users.map((user, id)=>{
-                const {name:{first,last}, email} = user;
+              users.map((user, id) => {
+                const { name: { first, last }, email, picture: { medium } } = user;
                 console.log(user);
-                
+
                 return (
-                  <div key={id} className="user">
-                    <h3>{`${first} ${last}`}</h3>
-                    <p>{email}</p>
-                  </div>
+                  <User user={{first,last,email,medium, id}} />
                 );
               })
             }

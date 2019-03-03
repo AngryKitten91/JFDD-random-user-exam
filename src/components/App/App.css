@@ -1,12 +1,39 @@
 .App {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 600px;
+  margin: 20px auto;
 }
 
 .user {
   box-sizing: border-box;
-  padding: 20px;
+  padding: 40px;
   margin: 20px 0;
   background-color: rgb(236, 236, 236);
   border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img {
+  border-radius: 100%;
+}
+
+.name{
+  text-transform: uppercase;
+}
+
+.loading {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.error {
+  background-color: rgb(243, 95, 95);
+  color:#fff;
+  box-sizing: border-box;
+  padding: 40px;
+  margin: 20px 0;
+  border-radius: 30px;
+  text-align: center;
 }
