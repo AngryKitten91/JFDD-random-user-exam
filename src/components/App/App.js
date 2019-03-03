@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 
 
-import User from 'components/User'
+import User from 'components/User';
 
 
-const URL = 'https://randomuser.me/api/?results=10'
+const URL = 'https://randomuser.me/api/?results=10';
+
+
 
 const fetchUsers = (url) => {
   return fetch(url)
@@ -27,6 +29,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+
     fetchUsers(URL)
       .then(({ results }) => {
         this.setState({
@@ -64,10 +67,9 @@ export default class App extends Component {
             {
               users.map((user, id) => {
                 const { name: { first, last }, email, picture: { medium } } = user;
-                console.log(user);
 
                 return (
-                  <User user={{first,last,email,medium, id}} />
+                  <User key={id} user={{ first, last, email, medium }} />
                 );
               })
             }
